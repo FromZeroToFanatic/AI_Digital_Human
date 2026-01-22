@@ -1,9 +1,9 @@
 """
-WSGI config for backend project.
+backend项目的WSGI配置。
 
-It exposes the WSGI callable as a module-level variable named ``application``.
+它将WSGI可调用对象暴露为名为``application``的模块级变量。
 
-For more information on this file, see
+有关此文件的更多信息，请参阅
 https://docs.djangoproject.com/en/6.0/howto/deployment/wsgi/
 """
 

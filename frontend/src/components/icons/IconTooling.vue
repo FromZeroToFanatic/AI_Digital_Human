@@ -1,4 +1,4 @@
-<!-- This icon is from <https://github.com/Templarian/MaterialDesign>, distributed under Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0) license-->
+<!-- 此图标来自 <https://github.com/Templarian/MaterialDesign>，采用 Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0) 许可证分发 -->
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
