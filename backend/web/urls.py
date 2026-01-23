@@ -4,6 +4,8 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,      # 使用刷新令牌获取新访问令牌的视图
 )
 
+from web.views.index import index
+
 urlpatterns = [
     # 获取JWT令牌接口
     # POST请求，携带username和password，返回access和refresh令牌
@@ -12,4 +14,6 @@ urlpatterns = [
     # 刷新JWT令牌接口
     # POST请求，携带refresh令牌，返回新的access令牌
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+
+    path('', index),
 ]

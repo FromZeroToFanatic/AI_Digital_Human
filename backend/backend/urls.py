@@ -1,11 +1,12 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 
 urlpatterns = [
     # 管理员后台路由
     path('admin/', admin.site.urls),
+    path('',include('web.urls')),
 ]
 
 # 静态文件路由配置
