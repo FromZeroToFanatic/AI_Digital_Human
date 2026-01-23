@@ -39,13 +39,13 @@ npm run dev
 ```
 
 ## 前端参考资料：
-# Vue3
+### Vue3
 - 文档：https://cn.vuejs.org/guide/quick-start
-# TailWind CSS
+### TailWind CSS
 - 安装：https://tailwindcss.com/docs/installation/using-vite
-# daisyUI
+### daisyUI
 - 安装：https://daisyui.com/docs/install/
 - 组件库：https://daisyui.com/components/
 Croppie
-# 文档：https://foliotek.github.io/Croppie/
+### 文档：https://foliotek.github.io/Croppie/
 - 因为vue-croppie不支持vue3，所以直接用croppie
