@@ -1,4 +1,5 @@
 import { fileURLToPath, URL } from 'node:url' // 用于处理文件URL
+import tailwindcss from '@tailwindcss/vite'
 
 import { defineConfig } from 'vite' // Vite配置函数
 import vue from '@vitejs/plugin-vue' // Vue插件，用于处理.vue文件
@@ -11,6 +12,7 @@ export default defineConfig({
   plugins: [
     vue(), // 启用Vue插件
     vueDevTools(), // 启用Vue DevTools插件
+    tailwindcss(),
   ],
 
   // 构建配置
