@@ -46,6 +46,6 @@ npm run dev
 ### daisyUI
 - 安装：https://daisyui.com/docs/install/
 - 组件库：https://daisyui.com/components/
-Croppie
-### 文档：https://foliotek.github.io/Croppie/
+### Croppie
+- 文档：https://foliotek.github.io/Croppie/
 - 因为vue-croppie不支持vue3，所以直接用croppie
