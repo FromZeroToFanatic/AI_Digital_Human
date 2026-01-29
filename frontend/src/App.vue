@@ -3,8 +3,8 @@
 import NavBar from "@/components/navbar/NavBar.vue";
 import {onMounted} from "vue";
 import {useUserStore} from "@/stores/user.js";
-import {useRoute, useRouter} from "vue-router";
 import api from "@/js/http/api.js";
+import {useRoute, useRouter} from "vue-router";
 
 const user = useUserStore()
 const route = useRoute()

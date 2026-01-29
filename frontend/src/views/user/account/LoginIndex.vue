@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { useUserStore } from "@/stores/user";
+import { useUserStore } from "@/stores/user.js";
 import {ref} from "vue";
 import {useRouter} from "vue-router";
 import api from "@/js/http/api.js"
