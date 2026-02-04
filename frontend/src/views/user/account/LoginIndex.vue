@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 
 import { useUserStore } from "@/stores/user.js";
 import {ref} from "vue";

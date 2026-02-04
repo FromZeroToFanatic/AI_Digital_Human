@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 
 import MenuIcon from "@/components/navbar/icons/MenuIcon.vue";
 import HomepageIcon from "@/components/navbar/icons/HomepageIcon.vue";

@@ -1,5 +1,4 @@
 from django.contrib.auth.models import User
-from django.template.context_processors import request
 from django.utils.timezone import now
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -10,14 +9,15 @@ from web.views.utils.photo import remove_old_photo
 
 
 class UpdateProfileView(APIView):
-    permission_classes = (IsAuthenticated,)
+    permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
         try:
             user = request.user
             user_profile = UserProfile.objects.get(user=user)
-            username = request().data.get('username').strip()
-            profile = request().data.get('profile').strip()[:500]
-            photo = request().FILES.get('photo',None)
+            username = request.data.get('username').strip()
+            profile = request.data.get('profile').strip()[:500]
+            photo = request.FILES.get('photo', None)
+
 
             if not username:
                 return Response({
@@ -33,7 +33,7 @@ class UpdateProfileView(APIView):
                 })
             if photo:
                 remove_old_photo(user_profile.photo)
-                user_profile.photo = None
+                user_profile.photo = photo
             user_profile.profile = profile
             user_profile.update_time = now()
             user_profile.save()
