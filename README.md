@@ -35,3 +35,6 @@ npm run dev
 ### Croppie
 - 文档：https://foliotek.github.io/Croppie/
 - 因为vue-croppie不支持vue3，所以直接用croppie
+
+<img width="1142" height="1018" alt="image" src="https://github.com/user-attachments/assets/991b8306-2f68-4480-9a6e-e1eba92d3790" />
+
