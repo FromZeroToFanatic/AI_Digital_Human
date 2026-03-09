@@ -88,7 +88,6 @@ class MessageChatView(APIView):
                 total_tokens=total_tokens,
             )
 
-
         response = StreamingHttpResponse(event_stream(), content_type='text/event-stream')
         response['Cache-Control'] = 'no-cache'
         return response
