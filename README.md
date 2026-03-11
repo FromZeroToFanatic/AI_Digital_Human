@@ -23,4 +23,7 @@ cd frontend
 # 启动开发服务器
 npm run dev
 ```
+
+<img width="976" height="178" alt="image" src="https://github.com/user-attachments/assets/551cea75-e23f-42bb-8d1e-f8f47ef52d35" />
+
 <img width="1108" height="898" alt="image" src="https://github.com/user-attachments/assets/b2e78fe3-ff0a-4b75-a53f-f6dd43fa524f" />
