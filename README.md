@@ -24,6 +24,7 @@ cd frontend
 npm run dev
 ```
 
-https://bailian.console.aliyun.com/cn-beijing/?spm=5176.12818093_47.console-base_product-drawer-right.dproducts-and-services-sfm.258b16d0dZyCzu&tab=api#/api/?type=model&url=2853143
+<img width="1188" height="1236" alt="image" src="https://github.com/user-attachments/assets/5a726b9b-9471-4bf1-b1cd-314ed68bc087" />
 
-https://bailian.console.aliyun.com/cn-beijing/?spm=5176.12818093_47.console-base_product-drawer-right.dproducts-and-services-sfm.258b16d0dZyCzu&tab=api#/api/?type=model&url=2853143
+<img width="904" height="1232" alt="image" src="https://github.com/user-attachments/assets/02fbfd15-dba0-4467-ad65-5eb666b2b2cc" />
+
