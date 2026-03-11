@@ -24,7 +24,9 @@ cd frontend
 npm run dev
 ```
 
+### 语音识别、翻译服务
 <img width="1188" height="1236" alt="image" src="https://github.com/user-attachments/assets/5a726b9b-9471-4bf1-b1cd-314ed68bc087" />
 
+### 语音合成服务
 <img width="904" height="1232" alt="image" src="https://github.com/user-attachments/assets/02fbfd15-dba0-4467-ad65-5eb666b2b2cc" />
 
