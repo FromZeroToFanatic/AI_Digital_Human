@@ -7,8 +7,6 @@ import uuid
 from queue import Queue
 
 import websockets
-
-
 from django.http import StreamingHttpResponse
 from langchain_core.messages import HumanMessage, BaseMessageChunk, SystemMessage, AIMessage
 from rest_framework.renderers import BaseRenderer
@@ -20,15 +18,17 @@ from web.models.friend import Friend, Message, SystemPrompt
 from web.views.friend.message.chat.graph import ChatGraph
 from web.views.friend.message.memory.update import update_memory
 
+
 class SSERenderer(BaseRenderer):
     media_type = 'text/event-stream'
     format = 'txt'
     def render(self, data, accepted_media_type=None, renderer_context=None):
         return data
 
+
 def add_system_prompt(state, friend):
     msgs = state['messages']
-    system_prompts = SystemPrompt.objects.filter(title='通用').order_by('order_number')
+    system_prompts = SystemPrompt.objects.filter(title='回复').order_by('order_number')
     prompt = ''
     for sp in system_prompts:
         prompt += sp.prompt
@@ -79,6 +79,7 @@ class MessageChatView(APIView):
         response['Cache-Control'] = 'no-cache'
         response['X-Accel-Buffering'] = 'no'
         return response
+
 
     async def tts_sender(self, app, inputs, mq, ws, task_id):
         async for msg, metadata in app.astream(inputs, stream_mode="messages"):
@@ -144,12 +145,12 @@ class MessageChatView(APIView):
                     "model": "cosyvoice-v3-flash",
                     "parameters": {
                         "text_type": "PlainText",
-                        "voice": "yiyi",  # 音色
+                        "voice": "longanyang",  # 音色
                         "format": "mp3",  # 音频格式
                         "sample_rate": 22050,  # 采样率
                         "volume": 50,  # 音量
                         "rate": 1.25,  # 语速
-                        "pitch": 1.1  # 音调
+                        "pitch": 1  # 音调
                     },
                     "input": {  # input不能省去，不然会报错
                     }

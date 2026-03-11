@@ -136,12 +136,9 @@ async function handleSend(event, audio_msg) {
         }
       },
       onerror(err) {
-
       },
     })
   } catch (err) {
-    console.log(err)
-
   }
 }
 
@@ -158,11 +155,12 @@ function handleStop() {
 
 defineExpose({
   focus,
+  close,
 })
 </script>
 
 <template>
-   <form v-if="!showMic" @submit.prevent="handleSend" class="absolute bottom-4 left-2 h-12 w-86 flex items-center">
+  <form v-if="!showMic" @submit.prevent="handleSend" class="absolute bottom-4 left-2 h-12 w-86 flex items-center">
     <input
         ref="input-ref"
         v-model="message"
@@ -177,7 +175,7 @@ defineExpose({
       <MicIcon />
     </div>
   </form>
-   <Microphone
+  <Microphone
       v-else
       @close="showMic = false"
       @send="handleSend"
