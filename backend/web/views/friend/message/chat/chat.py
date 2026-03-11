@@ -143,12 +143,12 @@ class MessageChatView(APIView):
                     "model": "cosyvoice-v3-flash",
                     "parameters": {
                         "text_type": "PlainText",
-                        "voice": "longanyang",  # 音色
+                        "voice": "yiyi",  # 音色
                         "format": "mp3",  # 音频格式
                         "sample_rate": 22050,  # 采样率
                         "volume": 50,  # 音量
                         "rate": 1.25,  # 语速
-                        "pitch": 1  # 音调
+                        "pitch": 1.1  # 音调
                     },
                     "input": {  # input不能省去，不然会报错
                     }
