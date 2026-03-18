@@ -33,143 +33,143 @@
 ## 完整目录结构
 
 PythonProject1/
-├── backend/                          # 后端项目根目录（Django）
-│   ├── backend/                      # Django 核心配置目录
-│   │   ├── asgi.py                   # ASGI 异步服务入口
-│   │   ├── settings.py               # Django 全局配置
-│   │   ├── urls.py                   # 项目主路由
-│   │   └── wsgi.py                   # WSGI 服务入口
-│   ├── web/                          # 核心业务应用
-│   │   ├── models/                   # 数据模型层
-│   │   │   ├── character.py          # 角色模型
-│   │   │   ├── friend.py             # 好友 & 消息模型
-│   │   │   └── user.py               # 用户模型
-│   │   ├── views/                    # 视图层（按业务拆分）
-│   │   │   ├── create/character/     # 角色创建模块
-│   │   │   │   ├── create.py         # 创建角色
-│   │   │   │   ├── get_list.py       # 获取角色列表
-│   │   │   │   ├── get_single.py     # 获取单个角色
-│   │   │   │   ├── remove.py         # 删除角色
-│   │   │   │   └── update.py         # 更新角色
-│   │   │   ├── friend/               # 好友模块
-│   │   │   │   ├── message/          # 消息处理
-│   │   │   │   │   ├── asr/          # 语音识别
-│   │   │   │   │   ├── chat/         # 聊天功能
-│   │   │   │   │   │   ├── chat.py   # 流式聊天 API
-│   │   │   │   │   │   └── graph.py  # 聊天图编排
-│   │   │   │   │   ├── memory/       # 记忆管理
-│   │   │   │   │   │   ├── graph.py  # 记忆图
-│   │   │   │   │   │   └── update.py # 更新记忆
-│   │   │   │   │   └── get_history.py # 获取聊天记录
-│   │   │   │   ├── get_list.py       # 获取好友列表
-│   │   │   │   ├── get_or_create.py  # 获取/创建好友关系
-│   │   │   │   └── remove.py         # 删除好友
-│   │   │   ├── homepage/             # 首页模块
-│   │   │   │   └── index.py          # 首页视图
-│   │   │   ├── profile/              # 个人资料模块
-│   │   │   │   └── update.py         # 更新资料
-│   │   │   ├── user/account/         # 用户账户模块
-│   │   │   │   ├── get_user_info.py  # 获取用户信息
-│   │   │   │   ├── login.py          # 登录
-│   │   │   │   ├── logout.py         # 登出
-│   │   │   │   ├── refresh_token.py  # 刷新 Token
-│   │   │   │   └── register.py       # 注册
-│   │   │   ├── user/utils/           # 用户工具类
-│   │   │   │   └── photo.py          # 头像处理
-│   │   │   └── index.py              # 视图入口
-│   │   ├── documents/utils/          # 文档处理工具
-│   │   │   ├── custom_embeddings.py  # 自定义向量嵌入
-│   │   │   └── insert_documents.py   # 文档入库
-│   │   ├── migrations/               # 数据库迁移文件
-│   │   ├── templates/                # Django 模板
-│   │   │   └── index.html            # 主页模板
-│   │   ├── admin.py                  # Django Admin 配置
-│   │   ├── apps.py                   # 应用注册配置
-│   │   ├── tests.py                  # 单元测试
-│   │   ├── urls.py                   # Web 应用路由
-│   │   └── views.py                  # 视图统一入口
-│   └── manage.py                     # Django 管理脚本
-
-├── frontend/                         # 前端项目根目录（Vue3 + Vite）
-│   ├── src/                          # 源代码目录
-│   │   ├── assets/                   # 全局静态资源
-│   │   │   └── main.css              # 全局样式
-│   │   ├── components/               # 公共可复用组件
-│   │   │   ├── character/            # 角色相关组件
-│   │   │   │   ├── chat_field/       # 聊天输入区域
-│   │   │   │   │   ├── character_photo_field/
-│   │   │   │   │   │   └── CharacterPhotoField.vue  # 角色照片上传
-│   │   │   │   │   ├── chat_history/ # 聊天记录展示
-│   │   │   │   │   │   ├── message/  # 单条消息组件
-│   │   │   │   │   │   └── ChatHistory.vue
-│   │   │   │   │   ├── input_field/  # 输入框组件
-│   │   │   │   │   └── ChatField.vue # 聊天模块主组件
-│   │   │   │   └── Character.vue     # 角色主组件
-│   │   │   └── navbar/               # 导航栏组件
-│   │   │       ├── icon/             # 图标组件集
-│   │   │       │   ├── CameraIcon.vue
-│   │   │       │   ├── CreateIcon.vue
-│   │   │       │   ├── FriendIcon.vue
-│   │   │       │   ├── HomePageIcon.vue
-│   │   │       │   ├── KeyboardIcon.vue
-│   │   │       │   ├── LoginIcon.vue
-│   │   │       │   ├── MenuIcon.vue
-│   │   │       │   ├── MicIcon.vue
-│   │   │       │   ├── RemoveIcon.vue
-│   │   │       │   ├── SearchIcon.vue
-│   │   │       │   ├── SendIcon.vue
-│   │   │       │   ├── UpdateIcon.vue
-│   │   │       │   ├── UserLogoutIcon.vue
-│   │   │       │   ├── UserProfileIcon.vue
-│   │   │       │   └── UserSpaceIcon.vue
-│   │   │       ├── NavBar.vue        # 导航栏主组件
-│   │   │       └── UserMenu.vue      # 用户菜单
-│   │   ├── js/                       # 工具脚本
-│   │   │   ├── http/                 # HTTP 请求封装
-│   │   │   │   ├── api.js            # 通用 API 封装
-│   │   │   │   └── streamApi.js      # 流式请求封装
-│   │   │   └── utils/                # 通用工具函数
-│   │   │       └── base_64-file.js   # Base64 <-> 文件转换
-│   │   ├── router/                   # Vue Router 路由
-│   │   │   └── index.js
-│   │   ├── stores/                   # Pinia 状态管理
-│   │   │   ├── counter.js            # 示例模块
-│   │   │   └── user.js               # 用户全局状态
-│   │   ├── views/                    # 页面视图
-│   │   │   ├── create/               # 创建相关页面
-│   │   │   │   ├── character/
-│   │   │   │   │   ├── components/   # 页面子组件
-│   │   │   │   │   ├── CreateCharacter.vue
-│   │   │   │   │   └── UpdateCharacter.vue
-│   │   │   │   └── CreateIndex.vue
-│   │   │   ├── error/                # 异常页面
-│   │   │   │   └── NotFoundIndex.vue # 404
-│   │   │   ├── friend/               # 好友页面
-│   │   │   │   └── FriendIndex.vue
-│   │   │   ├── homepage/             # 首页
-│   │   │   │   └── HomepageIndex.vue
-│   │   │   └── user/                 # 用户相关页面
-│   │   │       ├── account/          # 账户
-│   │   │       │   ├── LoginIndex.vue
-│   │   │       │   └── RegisterIndex.vue
-│   │   │       ├── profile/          # 个人资料
-│   │   │       │   ├── components/
-│   │   │       │   └── ProfileIndex.vue
-│   │   │       └── space/            # 用户空间
-│   │   │           ├── components/
-│   │   │           └── SpaceIndex.vue
-│   │   ├── App.vue                   # 根组件
-│   │   └── main.js                   # 入口文件
-│   ├── .gitignore
-│   ├── README.md
-│   ├── index.html
-│   ├── jsconfig.json
-│   ├── package-lock.json
-│   ├── package.json
-│   └── vite.config.js
-
-├── .gitignore                        # 项目全局忽略配置
-└── README.md                         # 项目总说明
+|-- backend/                          # 后端项目根目录（Django）
+|   |-- backend/                      # Django 核心配置目录
+|   |   |-- asgi.py                   # ASGI 异步服务入口
+|   |   |-- settings.py               # Django 全局配置文件
+|   |   |-- urls.py                   # 项目主路由配置
+|   |   `-- wsgi.py                   # WSGI 服务入口
+|   |-- web/                          # 核心业务应用
+|   |   |-- models/                   # 数据模型层
+|   |   |   |-- character.py          # 角色数据模型
+|   |   |   |-- friend.py             # 好友&消息数据模型
+|   |   |   `-- user.py               # 用户数据模型
+|   |   |-- views/                    # 视图层（按业务模块拆分）
+|   |   |   |-- create/character/     # 角色创建管理模块
+|   |   |   |   |-- create.py         # 创建角色接口
+|   |   |   |   |-- get_list.py       # 获取角色列表
+|   |   |   |   |-- get_single.py     # 获取单个角色详情
+|   |   |   |   |-- remove.py         # 删除角色
+|   |   |   |   `-- update.py         # 更新角色信息
+|   |   |   |-- friend/               # 好友管理模块
+|   |   |   |   |-- message/          # 消息处理模块
+|   |   |   |   |   |-- asr/          # 语音识别能力
+|   |   |   |   |   |-- chat/         # 聊天核心功能
+|   |   |   |   |   |   |-- chat.py   # 流式聊天API
+|   |   |   |   |   |   `-- graph.py  # 聊天逻辑图编排
+|   |   |   |   |   |-- memory/       # 记忆管理模块
+|   |   |   |   |   |   |-- graph.py  # 记忆逻辑图
+|   |   |   |   |   |   `-- update.py # 记忆更新接口
+|   |   |   |   |   `-- get_history.py # 获取聊天历史记录
+|   |   |   |   |-- get_list.py       # 获取好友列表
+|   |   |   |   |-- get_or_create.py  # 获取/创建好友关系
+|   |   |   |   `-- remove.py         # 删除好友关系
+|   |   |   |-- homepage/             # 首页模块
+|   |   |   |   `-- index.py          # 首页视图接口
+|   |   |   |-- profile/              # 个人资料模块
+|   |   |   |   `-- update.py         # 更新个人资料
+|   |   |   |-- user/account/         # 用户账户模块
+|   |   |   |   |-- get_user_info.py  # 获取用户信息
+|   |   |   |   |-- login.py          # 用户登录接口
+|   |   |   |   |-- logout.py         # 用户登出接口
+|   |   |   |   |-- refresh_token.py  # 刷新用户Token
+|   |   |   |   `-- register.py       # 用户注册接口
+|   |   |   |-- user/utils/           # 用户相关工具类
+|   |   |   |   `-- photo.py          # 头像处理工具
+|   |   |   `-- index.py              # 视图统一入口
+|   |   |-- documents/utils/          # 文档处理工具集
+|   |   |   |-- custom_embeddings.py  # 自定义向量嵌入
+|   |   |   `-- insert_documents.py   # 文档入库工具
+|   |   |-- migrations/               # 数据库迁移文件
+|   |   |-- templates/                # Django模板目录
+|   |   |   `-- index.html            # 主页模板
+|   |   |-- admin.py                  # Django Admin后台配置
+|   |   |-- apps.py                   # 应用注册配置
+|   |   |-- tests.py                  # 单元测试文件
+|   |   |-- urls.py                   # Web应用路由配置
+|   |   `-- views.py                  # 视图入口文件
+|   `-- manage.py                     # Django管理脚本
+|
+|-- frontend/                         # 前端项目根目录（Vue3 + Vite）
+|   |-- src/                          # 前端源代码目录
+|   |   |-- assets/                   # 全局静态资源
+|   |   |   `-- main.css              # 全局样式文件
+|   |   |-- components/               # 公共可复用组件
+|   |   |   |-- character/            # 角色相关组件
+|   |   |   |   |-- chat_field/       # 聊天输入区域组件
+|   |   |   |   |   |-- character_photo_field/
+|   |   |   |   |   |   `-- CharacterPhotoField.vue  # 角色照片上传组件
+|   |   |   |   |   |-- chat_history/ # 聊天记录展示组件
+|   |   |   |   |   |   |-- message/  # 单条消息组件
+|   |   |   |   |   |   `-- ChatHistory.vue
+|   |   |   |   |   |-- input_field/  # 输入框组件
+|   |   |   |   |   `-- ChatField.vue # 聊天模块主组件
+|   |   |   |   `-- Character.vue     # 角色主组件
+|   |   |   `-- navbar/               # 导航栏组件
+|   |   |       |-- icon/             # 图标组件集
+|   |   |       |   |-- CameraIcon.vue
+|   |   |       |   |-- CreateIcon.vue
+|   |   |       |   |-- FriendIcon.vue
+|   |   |       |   |-- HomePageIcon.vue
+|   |   |       |   |-- KeyboardIcon.vue
+|   |   |       |   |-- LoginIcon.vue
+|   |   |       |   |-- MenuIcon.vue
+|   |   |       |   |-- MicIcon.vue
+|   |   |       |   |-- RemoveIcon.vue
+|   |   |       |   |-- SearchIcon.vue
+|   |   |       |   |-- SendIcon.vue
+|   |   |       |   |-- UpdateIcon.vue
+|   |   |       |   |-- UserLogoutIcon.vue
+|   |   |       |   |-- UserProfileIcon.vue
+|   |   |       |   `-- UserSpaceIcon.vue
+|   |   |       |-- NavBar.vue        # 导航栏主组件
+|   |   |       `-- UserMenu.vue      # 用户菜单组件
+|   |   |-- js/                       # 前端工具脚本
+|   |   |   |-- http/                 # HTTP请求封装
+|   |   |   |   |-- api.js            # 通用API接口封装
+|   |   |   |   `-- streamApi.js      # 流式请求API封装
+|   |   |   `-- utils/                # 通用工具函数
+|   |   |       `-- base_64-file.js   # Base64与文件互转工具
+|   |   |-- router/                   # Vue Router路由配置
+|   |   |   `-- index.js              # 路由定义文件
+|   |   |-- stores/                   # Pinia状态管理
+|   |   |   |-- counter.js            # 计数器示例状态
+|   |   |   `-- user.js               # 用户全局状态
+|   |   |-- views/                    # 页面视图
+|   |   |   |-- create/               # 创建相关页面
+|   |   |   |   |-- character/        # 角色创建页面
+|   |   |   |   |   |-- components/   # 页面子组件
+|   |   |   |   |   |-- CreateCharacter.vue # 创建角色页面
+|   |   |   |   |   `-- UpdateCharacter.vue # 更新角色页面
+|   |   |   |   `-- CreateIndex.vue   # 创建页入口
+|   |   |   |-- error/                # 异常页面
+|   |   |   |   `-- NotFoundIndex.vue # 404页面
+|   |   |   |-- friend/               # 好友页面
+|   |   |   |   `-- FriendIndex.vue   # 好友列表页
+|   |   |   |-- homepage/             # 首页
+|   |   |   |   `-- HomepageIndex.vue # 首页视图
+|   |   |   `-- user/                 # 用户相关页面
+|   |   |       |-- account/          # 账户管理页面
+|   |   |       |   |-- LoginIndex.vue    # 登录页
+|   |   |       |   `-- RegisterIndex.vue # 注册页
+|   |   |       |-- profile/          # 个人资料页
+|   |   |       |   |-- components/   # 页面子组件
+|   |   |       |   `-- ProfileIndex.vue  # 资料页主文件
+|   |   |       `-- space/            # 用户空间页
+|   |   |           |-- components/   # 页面子组件
+|   |   |           `-- SpaceIndex.vue    # 空间页主文件
+|   |   |-- App.vue                   # Vue根组件
+|   |   `-- main.js                   # Vue项目入口文件
+|   |-- .gitignore                    # 前端Git忽略配置
+|   |-- README.md                     # 前端项目说明
+|   |-- index.html                    # HTML入口模板
+|   |-- jsconfig.json                 # JS配置文件
+|   |-- package-lock.json             # 依赖锁定文件
+|   |-- package.json                  # 项目依赖配置
+|   `-- vite.config.js                # Vite构建配置
+|
+|-- .gitignore                        # 项目全局Git忽略配置
+`-- README.md                         # 项目总说明文档
 
 ---
 
